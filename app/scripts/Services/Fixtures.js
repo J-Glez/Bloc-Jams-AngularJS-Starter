@@ -36,6 +36,19 @@
             return albumPicasso;
         };
 
+        Fixtures.getCollection = function(numberOfAlbums) {
+            //Return an array with # of Picasso objects
+            // •	This method should take one argument, numberOfAlbums, and return an array with the specified number of albumPicasso objects pushed to it.
+            // •	Inject the Fixtures service into CollectionCtrl.
+            // •	Update CollectionCtrl to use the Fixtures service's getCollection()method:
+            var albumCollection = [];
+
+            for (var i=0; i < numberOfAlbums; i++) {
+                albumCollection.push(angular.copy(Fixtures.getAlbum()));
+            }
+            return albumCollection;
+        }
+
         return Fixtures;
     }
 
